@@ -60,17 +60,18 @@ void VFD::setDuty(int duty)
   SPI.endTransaction();
 }
 
-void VFD::write(char* text)
+void VFD::write(const char* text)
 {
 	scrLen = strlen(text);
 	scrPos = NUMDIGITS-1;
 
+	strncpy(buf, text, BUFSIZE);
+
 	if(scrLen > BUFSIZE-1){
 		scrLen = BUFSIZE-1;
-		text[scrLen] = '\0';
+		buf[scrLen] = '\0';
 	}
 
-	strncpy(buf, text, BUFSIZE);
 	display();
 }
 
