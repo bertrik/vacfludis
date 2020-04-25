@@ -70,7 +70,7 @@ void VFD::write(char* text)
 		text[scrLen] = '\0';
 	}
 
-	strcpy(buf, text);
+	strncpy(buf, text, BUFSIZE);
 	display();
 }
 
