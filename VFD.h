@@ -43,7 +43,7 @@ public:
 	void init();
 	void supplyOn();
 	void supplyOff();
-	void write(char* text);
+	void write(const char* text);
 	void display();
   void setDuty(int duty);
 
